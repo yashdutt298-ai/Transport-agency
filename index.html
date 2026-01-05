@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahuja Tour and Travel | Premium Luxury Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { 
+            --primary: #0a192f; /* Deep Navy */
+            --accent: #ffcc00;  /* Royal Gold */
+            --bg: #fdfdfd; 
+            --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --error: #d90429;
+        }
+
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #f0f2f5; color: #333; }
+        
+        /* Premium Header */
+        header { 
+            background: var(--primary); 
+            color: white; 
+            padding: 25px; 
+            text-align: center; 
+            border-bottom: 4px solid var(--accent);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .logo { font-size: 28px; font-weight: 800; letter-spacing: 2px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+        .logo i { color: var(--accent); }
+
+        /* Inquiry Form Card */
+        .booking-box { 
+            max-width: 550px; 
+            margin: -30px auto 40px; 
+            background: white; 
+            padding: 35px; 
+            border-radius: 20px; 
+            box-shadow: var(--card-shadow); 
+            position: relative;
+            z-index: 10;
+        }
+        .booking-box h2 { text-align: center; color: var(--primary); margin-bottom: 25px; font-weight: 700; border-bottom: 2px solid var(--accent); display: inline-block; width: 100%; padding-bottom: 10px; }
+        
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 14px; color: #555; }
+        .star { color: var(--error); }
+        
+        input, select { 
+            width: 100%; padding: 14px; border: 1.5px solid #ddd; border-radius: 10px; font-size: 15px; transition: 0.3s;
+        }
+        input:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 8px rgba(10,25,47,0.1); }
+
+        .wa-submit { 
+            width: 100%; background: #25D366; color: white; padding: 18px; border: none; border-radius: 12px; font-weight: bold; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.4s; margin-top: 15px; box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+        }
+        .wa-submit:hover { background: #128C7E; transform: translateY(-3px); }
+
+        /* Fleet Section */
+        .section-title { text-align: center; margin: 60px 0 30px; color: var(--primary); font-size: 32px; font-weight: 800; }
+        .fleet-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 20px; max-width: 1200px; margin: auto; }
+        
+        .vehicle-card { 
+            background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--card-shadow); transition: 0.4s; border: 1px solid #eee;
+        }
+        .vehicle-card:hover { transform: translateY(-10px); border-color: var(--accent); }
+        .vehicle-img { width: 100%; height: 220px; object-fit: cover; background: #f9f9f9; }
+        .vehicle-info { padding: 25px; text-align: center; }
+        .vehicle-info h3 { margin: 0 0 15px; color: var(--primary); font-size: 22px; font-weight: 700; }
+        
+        .action-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .btn { padding: 14px; border-radius: 10px; text-decoration: none; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 14px; transition: 0.3s; }
+        .btn-call { background: var(--primary); color: white; }
+        .btn-wa { background: #25D366; color: white; }
+        .btn:hover { opacity: 0.9; transform: scale(1.03); }
+
+        /* Professional Trust Box */
+        .trust-box { 
+            background: var(--primary); color: white; max-width: 1000px; margin: 60px auto; padding: 50px 30px; border-radius: 30px; text-align: center; border: 2px solid var(--accent);
+        }
+        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .trust-item i { font-size: 45px; color: var(--accent); margin-bottom: 20px; }
+        .trust-item h4 { font-size: 20px; margin-bottom: 10px; }
+        .trust-item p { font-size: 15px; color: #ccc; line-height: 1.6; }
+
+        footer { text-align: center; padding: 40px; background: #050c16; color: #888; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo"><i class="fas fa-paper-plane"></i> AHUJA TOUR AND TRAVEL</div>
+</header>
+
+<div style="height: 100px; background: var(--primary);"></div> <div class="booking-box">
+    <h2>Enquiry Form</h2>
+    
+    <div class="form-group">
+        <label>Full Name <span class="star">*</span></label>
+        <input type="text" id="cust_name" placeholder="Enter Full Name">
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label>Pick-up Location <span class="star">*</span></label>
+            <input type="text" id="pickup_loc" placeholder="From Location">
+        </div>
+        <div class="form-group">
+            <label>Drop Location <span class="star">*</span></label>
+            <input type="text" id="drop_loc" placeholder="To Destination">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Select Vehicle <span class="star">*</span></label>
+        <select id="tempo_type">
+            <option value="">-- Choose Car/Tempo --</option>
+            <option value="Swift Dzire">Swift Dzire</option>
+            <option value="Maruti Ertiga">Maruti Ertiga</option>
+            <option value="Innova Crysta">Innova Crysta</option>
+            <option value="12 Seater Tempo Traveller">12 Seater Tempo Traveller</option>
+            <option value="17 Seater Tempo Traveller">17 Seater Tempo Traveller</option>
+            <option value="20 Seater Tempo Traveller">20 Seater Tempo Traveller</option>
+            <option value="26 Seater Tempo Traveller">26 Seater Tempo Traveller</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label>Reporting Date <span class="star">*</span></label>
+            <input type="date" id="start_date">
+        </div>
+        <div class="form-group">
+            <label>Reporting Time <span class="star">*</span></label>
+            <input type="time" id="start_time">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label>Return Date (Optional)</label>
+            <input type="date" id="end_date">
+        </div>
+        <div class="form-group">
+            <label>Return Time (Optional)</label>
+            <input type="time" id="end_time">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>WhatsApp Number <span class="star">*</span></label>
+        <input type="tel" id="cust_phone" placeholder="Contact Number">
+    </div>
+
+    <button type="button" class="wa-submit" onclick="mainBooking()">
+        <i class="fab fa-whatsapp"></i> SEND BOOKING ENQUIRY
+    </button>
+</div>
+
+<h2 class="section-title">Luxury Fleet</h2>
+
+<div class="fleet-container">
+    <div class="vehicle-card">
+        <img src="https://www.toyotabharat.com/images/showroom/innova-crysta/unmatched-unrivaled/innova-crysta-1.png" class="vehicle-img" alt="Crysta">
+        <div class="vehicle-info">
+            <h3>Innova Crysta</h3>
+            <div class="action-btns">
+                <a href="tel:+918376811974" class="btn btn-call">Call</a>
+                <a href="https://wa.me/918376811974?text=I%20want%20to%20book%20Innova%20Crysta" class="btn btn-wa">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+    <div class="vehicle-card">
+        <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/115041/ertiga-exterior-right-front-three-quarter-3.jpeg?is-upgraded=1&q=80" class="vehicle-img" alt="Ertiga">
+        <div class="vehicle-info">
+            <h3>Maruti Ertiga</h3>
+            <div class="action-btns">
+                <a href="tel:+918376811974" class="btn btn-call">Call</a>
+                <a href="https://wa.me/918376811974?text=I%20want%20to%20book%20Maruti%20Ertiga" class="btn btn-wa">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+    <div class="vehicle-card">
+        <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift-Dzire/11665/1731308316104/front-left-side-47.jpg" class="vehicle-img" alt="Swift">
+        <div class="vehicle-info">
+            <h3>Swift Dzire</h3>
+            <div class="action-btns">
+                <a href="tel:+918376811974" class="btn btn-call">Call</a>
+                <a href="https://wa.me/918376811974?text=I%20want%20to%20book%20Swift%20Dzire" class="btn btn-wa">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+    <div class="vehicle-card">
+        <img src="https://www.forcemotors.com/assets/images/product/Traveller_3350_1.png" class="vehicle-img" alt="Tempo">
+        <div class="vehicle-info">
+            <h3>Luxury Tempo Traveller</h3>
+            <div class="action-btns">
+                <a href="tel:+918376811974" class="btn btn-call">Call</a>
+                <a href="https://wa.me/918376811974?text=I%20want%20to%20book%20Luxury%20Tempo%20Traveller" class="btn btn-wa">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="trust-box">
+    <h2>Excellence Since 2008 (18+ Years)</h2>
+    <div class="trust-grid">
+        <div class="trust-item"><i class="fas fa-map-marked-alt"></i><h4>All Over India Service</h4><p>We provide nationwide travel with verified permits.</p></div>
+        <div class="trust-item"><i class="fas fa-user-tie"></i><h4>Professional Drivers</h4><p>Educated, well-behaved, and highly experienced drivers.</p></div>
+        <div class="trust-item"><i class="fas fa-shield-alt"></i><h4>Reliable & Safe</h4><p>18 years of trust in every journey we take.</p></div>
+    </div>
+</div>
+
+<footer>
+    <p><b>AHUJA TOUR AND TRAVEL</b> | yashduttbusiness@gmail.com | +91 8376811974</p>
+    <p>&copy; 2026 Delhi, India. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function mainBooking() {
+        var name = document.getElementById('cust_name').value;
+        var pLoc = document.getElementById('pickup_loc').value;
+        var dLoc = document.getElementById('drop_loc').value;
+        var type = document.getElementById('tempo_type').value;
+        var phone = document.getElementById('cust_phone').value;
+        var sD = document.getElementById('start_date').value;
+        var sT = document.getElementById('start_time').value;
+        var eD = document.getElementById('end_date').value || "Not Mentioned";
+        var eT = document.getElementById('end_time').value || "Not Mentioned";
+
+        if(!name || !pLoc || !dLoc || !type || !phone || !sD || !sT) {
+            alert("Error: You enter must all compulsory details!");
+            return;
+        }
+
+        var msg = "🌟 *New Booking Request* 🌟%0a%0a" +
+                  "*Name:* " + name + "%0a" +
+                  "*I want to book:* " + type + "%0a" +
+                  "*From:* " + pLoc + "%0a" +
+                  "*To:* " + dLoc + "%0a" +
+                  "*Reporting:* " + sD + " at " + sT + "%0a" +
+                  "*Return:* " + eD + " at " + eT + "%0a" +
+                  "*Mobile:* " + phone;
+
+        window.open("https://wa.me/918376811974?text=" + msg, '_blank');
+    }
+</script>
+</body>
+</html>
